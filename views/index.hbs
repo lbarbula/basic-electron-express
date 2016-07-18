@@ -4,12 +4,11 @@
   <input type="text" name="name">
   <button type="submit">Add ToDo</button>
 </form>
-<ul>
+<ol>
   {{#each item}}
-  <li>{{this.name}}</li>
-  <a href="delete/{{this.id}}"><button>Delete Item</button></a>
+  <li>{{this.name}}   <a href="delete/{{this.id}}"><button>Delete Item</button></a></li>
   {{/each}}
-</ul>
+</ol>
 <!-- <a href="/modal"><button id="modal" type="button">Button</button></a> -->
 <script>
 const BrowserWindow = require('electron').remote.BrowserWindow
