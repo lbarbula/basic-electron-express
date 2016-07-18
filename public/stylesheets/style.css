@@ -1,7 +1,8 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: white;
+  background-color: hsl(0, 0%, 80%);
+  font-family: futura;
   height: 60vh;
   width: 60vw;
   display: flex;
@@ -24,10 +25,11 @@ form {
 li {
   margin: 1rem;
 }
-/*button {
-  margin: 1rem;
-  width: 100%;
-}*/
+button {
+  box-shadow: 2px 2px grey;
+  background-color: hsl(197, 37%, 46%);
+  font-family:futura;
+}
 ol {
   border: 1px solid black;
   padding: 1rem;
