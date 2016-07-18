@@ -1,4 +1,9 @@
 <h1>To Do List</h1>
+<ul>
+  {{#each item}}
+  <li>{{this.name}}</li>
+  {{/each}}
+</ul>
 <a href="/modal"><button id="modal" type="button">Button</button></a>
 <script>
 const BrowserWindow = require('electron').remote.BrowserWindow

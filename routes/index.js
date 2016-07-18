@@ -1,11 +1,15 @@
 var express = require('express');
 var router = express.Router();
 var knex = require('../db/knex')
+var db = require('../db/api')
 /* GET home page. */
 router.get('/', function(req, res, next) {
   return knex('user').first()
   .then(function(user) {
-  res.render('index', { title: user.name});
+  db.getItems.then(function(items){
+    res.render('index', { title: user.name, item: items});
+
+  })
   })
 });
 
