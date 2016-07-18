@@ -4,16 +4,27 @@ var knex = require('../db/knex')
 var db = require('../db/api')
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  return knex('user').first()
-  .then(function(user) {
-  db.getItems.then(function(items){
-    res.render('index', { title: user.name, item: items});
-
-  })
+  db.getItems()
+  .then(function(items){
+    res.render('index', {item: items});
   })
 });
 
+router.get('/delete/:id', function(req, res, next){
+  db.deleteItem(req.params.id)
+  .then(function(){
+    res.redirect('/')
+  })
+})
+
 router.get('/modal', function(req,res, next) {
   res.render('modal', {title: 'Hello World'})
+})
+
+router.post('/', function(req, res, next){
+  db.addItems(req.body)
+  .then(function() {
+    res.redirect('/')
+  })
 })
 module.exports = router;
